@@ -1,2 +1,12 @@
 
-<div class='form-title'> <%= link_to("Make new post", new_post_path ) %> </div>
+<div class='form-title'> <%= link_to("Create Post", new_post_path ) %> </div>
+
+<div class="each-post">
+<% @post.each do |f| %>
+<div class="panel panel-primary">
+  <div class="panel-body">Author: <%= f.title %></div>
+  <div class="panel-footer"><%= f.body %></div>
+</div>
+<% end %>
+</div>
+

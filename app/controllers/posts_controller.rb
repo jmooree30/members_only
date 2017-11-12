@@ -9,19 +9,19 @@ class PostsController < ApplicationController
     end
 
     def create
-      @post = Post.new(user_params)
+      @post = Post.new(post_params)
       if @post.save 
         flash[:info] = "Posts updated"
         redirect_to posts_path
       else
         flash[:info] = "Something went wrong, please try again." 
-        redirect_to new_post_path
+        redirect_to posts_path
       end 
     end 
     
   private
 
-    def user_params
+    def post_params
       params.require(:post).permit(:title, :body)
     end
 
