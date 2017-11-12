@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
             flash[:success] = "You have been signed in!"
             redirect_to root_path
         else
-            flash[:danger] = "danger"
-            redirect_to root_path
+            flash[:danger] = "Invalid password/email combination, please try again."
+            redirect_to login_path
         end
     end 
 

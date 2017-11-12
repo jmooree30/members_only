@@ -16,6 +16,12 @@
       <a class="navbar-brand" href="#">Members Only!</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to root_path, class: "btn btn-black" do %>
+      <span class="glyphicon glyphicon-list-alt"></span> Posts
+      <% end %></li>
+      <li><%= link_to root_path, class: "btn btn-black" do %>
+      <span class="glyphicon glyphicon-home"></span> Home
+      <% end %></li>
       <% if !logged_in? %> 
       <li><%= link_to login_path, class: "btn btn-black" do %>
       <span class="glyphicon glyphicon-log-in"></span> Login
