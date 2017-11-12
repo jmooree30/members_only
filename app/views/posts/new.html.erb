@@ -2,11 +2,11 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-<%= form_for(@posts) do |f| %>
+<%= form_for(@post) do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %><br>
 <%= f.label :body %>
-<%= f.email_field :body %><br>
+<%= f.text_field :body %><br>
 <%= f.submit "create post" %>
     <% end %>
   </div>

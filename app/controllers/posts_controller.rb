@@ -1,14 +1,28 @@
 class PostsController < ApplicationController
 
     def index
-        @posts = Post.all
+      @post = Post.all
     end 
 
     def new 
-        @posts = Post.new 
+      @post = Post.new 
     end
 
-    def create 
+    def create
+      @post = Post.new(user_params)
+      if @post.save 
+        flash[:info] = "Posts updated"
+        redirect_to posts_path
+      else
+        flash[:info] = "Something went wrong, please try again." 
+        redirect_to new_post_path
+      end 
     end 
     
+  private
+
+    def user_params
+      params.require(:post).permit(:title, :body)
+    end
+
 end
