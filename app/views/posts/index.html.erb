@@ -3,9 +3,14 @@
 
 <div class="each-post">
 <% @post.each do |f| %>
+<% if logged_in? %>
+<p>Author: <%= f.author %></p>
+<% else %>
+<%= link_to("Must be logged in to see author", login_path) %>
+<% end %>
 <div class="panel panel-primary">
-  <div class="panel-body">Author: <%= f.title %></div>
-  <div class="panel-footer"><%= f.body %></div>
+  <div class="panel-body"> <%= f.title %></div>
+  <div class="panel-footer"><%= f.body %></div><br><br>
 </div>
 <% end %>
 </div>
