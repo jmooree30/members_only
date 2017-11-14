@@ -2,7 +2,7 @@
 <div class='form-title'> <%= link_to("Create Post", new_post_path ) %> </div>
 
 <div class="each-post">
-<% @post.each do |f| %>
+<% @post.order(created_at: :desc).each do |f| %>
 <% if logged_in? %>
 <p>Author: <%= f.author %></p>
 <% else %>
